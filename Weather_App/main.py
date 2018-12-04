@@ -1,8 +1,7 @@
 # Weather_App/main.py
 
 from pprint import pprint as pp
-from flask import Flask, flash, redirect, render_template \
-	request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for
 from weather import query_api
 
 app = Flask(__name__)
@@ -10,17 +9,17 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 	return render_template(
-		'weather.html'
-		data=[{'name':'Toronto'},
+		'weather.html',
+		data=[{'name':'Boston'},
+		{'name':'London'},
+		{'name':'Burlington'},
+		{'name':'Nashville'},
+		{'name':'Hyannis'},
+		{'name':'Portsmouth'},
 		{'name':'Montreal'},
-		{'name':'Calgary'},
-		{'name':'Ottawa'},
-		{'name':'Edmonton'},
-		{'name':'Mississauga'},
-		{'name':'Winnipeg'},
-		{'name':'Vancouver'},
-		{'name':'Brampton'},
-		{'name':'Quebec'}])
+		{'name':'Denver'},
+		{'name':'Chicago'},
+		{'name':'Philadelphia'}])
 
 @app.route("/result", methods=['GET','POST'])
 def result():
